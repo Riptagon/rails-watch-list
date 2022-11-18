@@ -1,9 +1,19 @@
-<h1>Movie lists</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80);">
+  <div class="container">
+    <h1>Movie List </h1>
+    <p>Here are your Lists of Movies</p>
+    <%= link_to "Make a new List", new_list_path, class: "btn btn-gradient"%>
+  </div>
+</div>
 
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list) %></li>
-  <% end %>
-</ul>
+<div class="cards">
+  <ul>
+    <% @lists.each do |list| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://plus.unsplash.com/premium_photo-1661719894305-9a56b6c4021a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2570&q=80)">
+        <li class="list_item" ><%= link_to list.name, list_path(list), class: "btn btn-ghost" %></li>
+      </div>
+    <% end %>
+  </ul>
+</div>
 
-<%= link_to "Make a new List", new_list_path%>
+
